@@ -15,7 +15,7 @@ const Footer = () => {
               </Link>
               <div className="footer__single-content">
                 <p>
-                Racket sport with players hitting a ball over a net, aiming to score points by landing the ball within the opponent's court.
+                Racket sport with players hitting a ball over a net, aiming to score points by landing the ball within the opponent&apos;s court.
                 </p>
                 {/* Socila */}
                 <Social

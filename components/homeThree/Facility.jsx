@@ -77,7 +77,7 @@ const Facility = () => {
                 </div>
                 <div className="facility__card-content">
                   <h5>
-                    <Link href="/">Children's Courses</Link>
+                    <Link href="/">Children&apos;s Courses</Link>
                   </h5>
                   <p className="secondary-text">
                   Enroll your child in our exciting courses designed to foster creativity and personal growth.
