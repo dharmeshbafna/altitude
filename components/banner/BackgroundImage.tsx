@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Data, CurrentSlideData } from "@/pages";
+import { Data, CurrentSlideData } from "@/pages/test";
 import styles from "@/styles/banner.module.css";
 
 type Props = {

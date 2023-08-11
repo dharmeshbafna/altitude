@@ -1,4 +1,4 @@
-import { Data } from "@/pages";
+import { Data } from "@/pages/test";
 import React from "react";
 import SliderCard from "./SliderCard";
 import styles from '@/styles/banner.module.css';
