@@ -103,3 +103,5 @@ const SliderButton = React.forwardRef<
     </button>
   );
 });
+
+SliderButton.displayName = 'SliderButton'; 
