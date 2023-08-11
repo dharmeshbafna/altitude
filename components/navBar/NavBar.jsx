@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navData } from "./navData";
-import Logo_light from "/public/images/logo-light.png";
-import Logo from "/public/images/aisa_logo.png";
+import Logo_light from "/public/images/aisa_logo_size.png";
+import Logo from "/public/images/aisa_logo_size.png";
 
 const NavBar = ({ cls = "header--secondary" }) => {
   const [windowHeight, setWindowHeight] = useState(0);
