@@ -4,12 +4,38 @@ import { useEffect, useState } from "react";
 import { navData } from "./navData";
 import Logo_light from "/public/images/aisa_logo_size.png";
 import Logo from "/public/images/aisa_logo_size.png";
+import { FaUser } from 'react-icons/fa';
+import { useRouter } from "next/router";
+import jwt from 'jsonwebtoken';
 
 const NavBar = ({ cls = "header--secondary" }) => {
   const [windowHeight, setWindowHeight] = useState(0);
   const [active, setActive] = useState(false);
   const [dropdownId, setDropdownId] = useState("");
   const [subDropdown, setSubDropdown] = useState("");
+  const [link, setLink] = useState('');
+  const [tokencheck, setTokencheck] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+
+    const t = localStorage.getItem('token');
+    if (t) {
+      const saltremove = t.replace(process.env.TOKEN, '');
+      const decode = jwt.decode(saltremove);
+
+      if (decode.user) {
+        setLink('/student/user');
+        setTokencheck(true);
+      } else if (decode.coach) {
+        setTokencheck(true);
+        setLink('/coach/user');
+      } else if (decode.admin) {
+        setTokencheck(true);
+        setLink('/admin/user');
+      }
+    }
+  }, []);
 
   const handleActive = () => {
     setActive(false);
@@ -48,6 +74,11 @@ const NavBar = ({ cls = "header--secondary" }) => {
     };
   }, []);
 
+  const logout = () => {
+    localStorage.removeItem('token');
+    window.location.reload();
+  };
+
   return (
     <header className={`header ${cls} ${windowHeight > 50 && "header-active"}`}>
       <div className="container">
@@ -85,17 +116,15 @@ const NavBar = ({ cls = "header--secondary" }) => {
                               onClick={() => handleDropdown(id)}
                               // href={url}
                               href="URL:void(0)"
-                              className={`nav__menu-link nav__menu-link--dropdown ${
-                                dropdownId === id &&
+                              className={`nav__menu-link nav__menu-link--dropdown ${dropdownId === id &&
                                 "nav__menu-link--dropdown-active"
-                              }`}
+                                }`}
                             >
                               {itm}
                             </Link>
                             <ul
-                              className={`nav__dropdown ${
-                                dropdownId === id && "nav__dropdown-active"
-                              }`}
+                              className={`nav__dropdown ${dropdownId === id && "nav__dropdown-active"
+                                }`}
                             >
                               {dropdown_itms?.map(
                                 ({
@@ -118,10 +147,9 @@ const NavBar = ({ cls = "header--secondary" }) => {
                                         {dp_itm}
                                       </Link>
                                       <ul
-                                        className={`nav__dropdown-child ${
-                                          subDropdown === id &&
+                                        className={`nav__dropdown-child ${subDropdown === id &&
                                           "nav__dropdown-active"
-                                        }`}
+                                          }`}
                                       >
                                         {sub_items?.map(
                                           ({ id, url, sub_itm }) => (
@@ -155,22 +183,44 @@ const NavBar = ({ cls = "header--secondary" }) => {
                           </li>
                         ) : (
                           <li>
-                            <Link></Link>
+                            <Link
+                              onClick={() => handleDropdown(id)}
+                              href={url}
+                              // href="URL:void(0)"
+                              className={`nav__menu-link nav__menu-link--nodropdown ${dropdownId === id &&
+                                "nav__menu-link--dropdown-active"
+                                }`}
+                            >
+                              {itm}
+                            </Link>
                           </li>
                         );
                       }
                     )}
-                    <li className="nav__menu-item d-block d-md-none">
-                      <Link
-                        href="/"
-                        className="cmn-button cmn-button--secondary"
-                      >
-                        Sign In
-                      </Link>
-                      <Link href="/" className="cmn-button">
-                        Sign Up
-                      </Link>
-                    </li>
+                    {tokencheck ? <li className="nav__menu-item d-flex d-lg-none">
+                        <Link href={link} className="cart" style={{ paddingLeft: '16px', marginRight: '25px' }}>
+                          <FaUser />
+                        </Link>
+                        <button
+                          onClick={logout}
+                          className="cmn-button"
+                        >
+                          Log Out
+                        </button>
+                      </li>
+                       :
+                      <li className="nav__menu-item d-block d-lg-none">
+                        <Link href="/" className="cmn-button" style={{ marginBottom: '16px' }}>
+                          7 Days Free Trial
+                        </Link>
+                        <Link
+                          href="/sign-in"
+                          className="cmn-button"
+                        >
+                          Sign In
+                        </Link>
+                      </li>
+                    }
                   </ul>
                   <div className="social">
                     <Link href="/">
@@ -191,17 +241,30 @@ const NavBar = ({ cls = "header--secondary" }) => {
                   {/* <Link href="/cart" className="cart">
                     <i className="golftio-cart"></i>
                   </Link> */}
-                  <div className="nav__uncollapsed-item d-none d-md-flex">
+                  {tokencheck ? <div className="nav__uncollapsed-item d-none d-lg-flex">
                     <Link
-                      href="/"
-                      className="cmn-button"
+                      href={link}
+                      className="cart"
                     >
-                      Sign In
+                      <FaUser />
                     </Link>
-                    {/* <Link href="/sign-up" className="cmn-button">
-                      Sign Up
-                    </Link> */}
+                    <button onClick={logout} className="cmn-button">
+                      Log Out
+                    </button>
                   </div>
+                    :
+                    <div className="nav__uncollapsed-item d-none d-lg-flex">
+                      <Link
+                        href="/"
+                        className="cmn-button"
+                      >
+                        7 Days Free Trial
+                      </Link>
+                      <Link href="/sign-in" className="cmn-button">
+                        Sign In
+                      </Link>
+                    </div>
+                  }
                   <button
                     className="nav__bar d-block d-xl-none"
                     onClick={() => setActive(!active)}

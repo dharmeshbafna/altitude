@@ -16,20 +16,20 @@ export default function About() {
       {/* AboutUs section */}
       <AboutUs />
 
-      {/* Club section */}
-      <Club />
-
       {/* Team section */}
       <Team />
 
+      {/* Club section */}
+      <Club />
+
       {/* Counter section */}
-      <Counter />
+      {/* <Counter /> */}
 
       {/* Testimonial section */}
       <Testimonial />
 
       {/* JoinClub section */}
-      <JoinClub />
+      {/* <JoinClub /> */}
 
       {/* Sponsor section */}
       <Sponsor />

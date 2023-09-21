@@ -3,7 +3,7 @@ import SmallBanner from "../common/SmallBanner";
 
 const Banner = () => {
   return (
-    <SmallBanner title="gallery">
+    <SmallBanner title="Gallery">
       <Breadcrumb
         breadcrumbs={[
           ["Home", "/"],

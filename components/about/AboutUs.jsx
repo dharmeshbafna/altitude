@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import about_thumb from "/public/images/about-thumb.png";
+import about_thumb from "/public/images/gallery/center.jpg";
 
 const AboutUs = () => {
   return (
@@ -11,16 +11,23 @@ const AboutUs = () => {
             <div className="section__content">
               <h5 className="section__content-sub-title">About us</h5>
               <h2 className="section__content-title">
-                We Are The Best Golf Club In Your Local Area
+                We Are The Best Tennis Academy In Your Local Area
               </h2>
               <p className="section__content-text">
                 We offer a lot of courses of varying difficulty and beautiful
-                scenery that golfers of all skill levels can enjoy. You will
-                learn golf from professionals with our competent and experienced
+                scenery that players of all skill levels can enjoy. You will
+                learn tennis from professionals with our competent and experienced
                 staff. You will have a great fun with our magnificent
                 illuminated field.
               </p>
-              <div className="about__section-inner">
+              <p className="section__content-text">
+                We offer a lot of courses of varying difficulty and beautiful
+                scenery that players of all skill levels can enjoy. You will
+                learn tennis from professionals with our competent and experienced
+                staff. You will have a great fun with our magnificent
+                illuminated field.
+              </p>
+              {/* <div className="about__section-inner">
                 <div className="about__section-inner__single">
                   <div className="about__section-inner__single-thumb">
                     <i className="golftio-flag"></i>
@@ -54,18 +61,18 @@ const AboutUs = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className="section__content-cta">
+              </div> */}
+              {/* <div className="section__content-cta">
                 <Link href="/about" className="cmn-button">
                   Read More
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-lg-6 col-xl-5 offset-xl-1 section__col">
             <div className="about__thumb wow fadeInUp" data-wow-duration="0.4s">
-              <Image src={about_thumb} alt="Image" className="unset" />
-              <div className="about__experience">
+              <Image src={about_thumb} alt="Image" className="" />
+              {/* <div className="about__experience">
                 <div className="about__experience-thumb">
                   <i className="golftio-ball"></i>
                 </div>
@@ -73,7 +80,7 @@ const AboutUs = () => {
                   <span>30 +</span>
                 </h3>
                 <p>Years of experience</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -6,8 +6,8 @@ const Banner = () => {
     <SmallBanner title="About Us">
       <Breadcrumb
         breadcrumbs={[
-          ["Hemo", "/"],
-          ["About Us", "/"],
+          ["Home", "/"],
+          ["About Us", "/about"],
         ]}
       />
     </SmallBanner>

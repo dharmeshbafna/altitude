@@ -5,21 +5,20 @@ const contactInfo = [
     id: 1,
     title: "Call Now",
     icon: "golftio-phone",
-    contact_by: ["(907) 555-0101", "(252) 555-0126"],
+    contact_by: ["+91 XXXXXXXXXX"],
   },
   {
     id: 2,
     title: "Email Address",
     icon: "golftio-email",
-    contact_by: ["sara.cruz@example.com", "bill.sanders@example.com"],
+    contact_by: ["info@tennisacademy.com"],
   },
   {
     id: 3,
     title: "Location",
     icon: "golftio-pin-location",
     contact_by: [
-      "Royal Ln. Mesa, New Jersey 45463",
-      "Thornridge Cir. Shiloh, Hawaii 81063",
+      "Ahmedabad, Gujarat 38XXXXX",
     ],
   },
 ];
@@ -32,10 +31,6 @@ const ContactBody = () => {
           <div className="col-lg-7">
             <div className="section__header">
               <h2 className="section__header-title">Contact Us</h2>
-              <p>
-                Golftio Sports Club is a golf club with a history that goes back
-                to XX century. From a cricket club to soccer tournaments,
-              </p>
             </div>
           </div>
         </div>

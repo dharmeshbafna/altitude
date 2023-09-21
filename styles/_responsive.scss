@@ -113,7 +113,7 @@
     }
 
     .cmn-button {
-      padding: 10px 24px;
+      padding: 10px 15px;
     }
   }
 
@@ -257,7 +257,7 @@
   }
 
   .authentication__wrapper {
-    margin-top: 220px;
+    margin-top: 180px;
   }
 
   // club view
@@ -432,7 +432,7 @@
         opacity: 1;
         visibility: visible;
         min-width: 100%;
-        background-color: rgba(12, 169, 64, 0.4);
+        background-color: transparent;
         box-shadow: $shadow;
 
         li {
@@ -511,7 +511,7 @@
 
     .nav__menu-link {
       width: 100%;
-      background-color: rgba(12, 169, 64, 0.2);
+      // background-color: rgba(12, 169, 64, 0.2);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -540,32 +540,32 @@
 
     .nav__menu-item--dropdown {
       .nav__menu-link--dropdown {
-        color: $white !important;
+        // color: $white !important;
 
         &::after {
-          color: $white !important;
+          // color: $white !important;
         }
 
         &:hover {
-          color: $white !important;
+          // color: $white !important;
 
           &::after {
-            color: $white !important;
+            // color: $white !important;
           }
         }
       }
 
       .nav__menu-link--dropdown-active {
-        color: $white !important;
+        // color: $white !important;
 
         &::after {
-          color: $white !important;
+          // color: $white !important;
         }
       }
 
       .nav__dropdown-item {
-        color: $white !important;
-        border-bottom: 1px solid #ffffff50;
+        // color: $white !important;
+        border-bottom: 1px solid rgba(59, 59, 59, 0.3764705882);
 
         &:hover {
           border-bottom: 1px solid #ffffff;
@@ -575,18 +575,18 @@
 
     .nav__menu-logo {
       .nav__menu-close {
-        color: $white;
+        // color: $white;
       }
     }
 
     .nav__menu-active {
-      background-color: #011006;
+      // background-color: #011006;
     }
 
     .social {
       a {
         background-color: transparent;
-        border: 1px solid rgba(242, 255, 246, 0.32);
+        border: 1px solid rgba(12, 169, 64, 0.2);
 
         &:hover {
           background-color: $white;
@@ -597,7 +597,7 @@
         }
 
         i {
-          color: $white;
+          // color: $white;
         }
       }
     }
@@ -818,7 +818,7 @@
   }
 
   .authentication__wrapper {
-    margin-top: 200px;
+    margin-top: 170px;
   }
 
   .map-wrapper {
@@ -911,7 +911,7 @@
   // header
   .header {
     .nav {
-      box-shadow: $shadow;
+      // box-shadow: $shadow;
     }
 
     .nav__menu {
@@ -929,7 +929,7 @@
   .header--secondary {
     .nav__bar {
       .icon-bar {
-        background-color: $white;
+        background-color: $theme-color;
       }
     }
   }
@@ -1133,6 +1133,12 @@
 }
 
 @media only screen and (max-width: 767.98px) {
+
+  //margin for card
+  .margin-card-top {
+    margin-top: 30px;
+  }
+
   // paragraph styles
   .primary-text {
     font-size: 18px;
@@ -1544,7 +1550,7 @@
   }
 
   .authentication__wrapper {
-    margin-top: 180px;
+    margin-top: 130px;
     padding: 30px 20px;
 
     h4 {

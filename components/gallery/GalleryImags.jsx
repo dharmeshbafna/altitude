@@ -20,10 +20,13 @@ const GalleryImags = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-xl-4 section__col d-none d-lg-block">
+          <div className="col-sm-6 col-lg-4 col-xl-4 section__col">
             <div className="gallery__thumb">
               <div className="gallery__thumb-single">
-                <Image src={three} alt="Image" />
+                <Image src={one} alt="Image" />
+              </div>
+              <div className="gallery__thumb-single">
+                <Image src={two} alt="Image" />
               </div>
             </div>
           </div>

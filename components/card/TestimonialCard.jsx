@@ -5,11 +5,11 @@ const TestimonialCard = ({ data }) => {
   return (
     <div className="testimonial__slider-card">
       <div className="testimonial__slider-card__body">
-        <div className="testimonial__slider-card__body-review">
+        {/* <div className="testimonial__slider-card__body-review">
           {[...Array(reating)].map((_, i) => (
             <i key={i} className="golftio-star"></i>
           ))}
-        </div>
+        </div> */}
         <p>{comment}</p>
       </div>
       <div className="testimonial__slider-card__author">

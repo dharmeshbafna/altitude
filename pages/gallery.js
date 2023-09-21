@@ -13,10 +13,10 @@ export default function Gallery() {
       <GalleryImags />
 
       {/* Gallery Slider Secrtion */}
-      <GallerySlider />
+      {/* <GallerySlider /> */}
 
       {/* Gallery Popup Secrtion */}
-      <GalleryPopup />
+      {/* <GalleryPopup /> */}
     </>
   );
 }

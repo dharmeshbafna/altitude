@@ -46,10 +46,10 @@ const Testimonial = () => {
               <h2 className="section__header-title">
                 Our Members Thinking About Us
               </h2>
-              <p>
+              {/* <p>
                 Golftio Sports Club is a golf club with a history that goes back
                 to XX century. From a cricket club to soccer tournaments,
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
