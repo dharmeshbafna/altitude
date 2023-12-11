@@ -1,10 +1,14 @@
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb"
 import SmallBanner from "@/components/common/SmallBanner"
 import Link from "next/link"
+import Head from "next/head"
 
 export default function Apt() {
     return (
         <>
+        <Head>
+            <title>APT | Programmes</title>
+        </Head>
             <SmallBanner title="APT">
                 <Breadcrumb
                     breadcrumbs={[

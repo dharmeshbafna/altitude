@@ -20,10 +20,14 @@ import ScrollToTop from "@/components/scrollToTop/ScrollToTop";
 import Gallery from "@/components/homeThree/Gallery";
 import Counter from "@/components/common/Counter";
 import Test from '@/pages/test';
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+    <Head>
+      <title>Altitude Tennis Academy</title>
+    </Head>
       {/* Preloader */}
       <Preloader />
 

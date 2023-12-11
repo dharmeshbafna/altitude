@@ -3,10 +3,13 @@ import NavBar from "@/components/navBar/NavBar";
 import SignInBody from "@/components/signIn/SignInBody";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { student_login, coach_login, admin_login } from "./api/server";
+import {
+  adminlogin
+} from "./api/server";
 import { useRouter } from "next/router";
 import jwt from 'jsonwebtoken';
 import Preloader from "@/components/preloader/Preloader";
+import Head from "next/head";
 
 export default function SignIn() {
 
@@ -20,18 +23,14 @@ export default function SignIn() {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    const checktoken = localStorage.getItem('token');
+    const checktoken = localStorage.getItem('Altitude');
 
     if (checktoken) {
       const saltremove = checktoken.replace(process.env.TOKEN, '');
       const decode = jwt.decode(saltremove);
 
-      if (decode.user) {
-        router.push('/student/user');
-      } else if (decode.coach) {
-        router.push('/coach/user');
-      } else if (decode.admin) {
-        router.push('/admin/user');
+      if (decode.arole == 'admin') {
+        router.push('/admin');
       }
     }
 
@@ -47,75 +46,55 @@ export default function SignIn() {
     setPass("");
 
     if (role === 'student') {
-      const student = await student_login(email, pass);
+      setErr(true);
+      setErrmsg('Student Role Currently Under Maintainance.');
 
-      if (student && student.success) {
-        localStorage.setItem('token', student.token);
-
-        const schecktoken = localStorage.getItem('token');
-
-        if (schecktoken) {
-          const ssaltremove = schecktoken.replace(process.env.TOKEN, '');
-          const sdecode = jwt.decode(ssaltremove);
-
-          if (sdecode.user && role === 'student') {
-            setErr(false);
-            setSuccess(true);
-            router.push('/student/user');
-          }
-        }
-      } else {
-        setErr(true);
-        setErrmsg('Invalid Credentials.');
-      }
+      setTimeout(() => {
+        setErr(false);
+        setSuccess(false);
+        setErrmsg('');
+        setSuccess('');
+      }, 2000);
     } else if (role === 'coach') {
-      const coach = await coach_login(email, pass);
+      setErr(true);
+      setErrmsg("Coach Role Currently Under Maintainance.");
 
-      if (coach && coach.success) {
-        localStorage.setItem('token', coach.token);
-
-        const cchecktoken = localStorage.getItem('token');
-
-        if (cchecktoken) {
-          const csaltremove = cchecktoken.replace(process.env.TOKEN, '');
-          const cdecode = jwt.decode(csaltremove);
-
-          if (cdecode.coach && role === 'coach') {
-            setErr(false);
-            setSuccess(true);
-            router.push('/coach/user');
-          }
-        }
-      } else {
-        setErr(true);
-        setErrmsg('Invalid Credentials. Please Try Again.');
-        console.log('Invalid Credentails');
-      }
+      setTimeout(() => {
+        setErr(false);
+        setSuccess(false);
+        setErrmsg('');
+        setSuccess('');
+      }, 2000);
     } else if (role === 'admin') {
-      const admin = await admin_login(email, pass);
+      const admin = await adminlogin(email, pass);
 
-      if (admin && admin.success) {
-        localStorage.setItem('token', admin.token);
+      console.log(admin);
+      if (admin.token) {
 
-        const achecktoken = localStorage.getItem('token');
+        const decode = jwt.decode(admin.token.replace(process.env.TOKEN, ''));
 
-        if (achecktoken) {
-          const adecode = jwt.decode(achecktoken.replace(process.env.TOKEN, ''));
-
-          if (adecode.admin && role === 'admin') {
-            setErr(false);
-            setSuccess(true);
-            router.push('/admin/user');
-          }
+        if (decode.user && decode.arole == 'admin') {
+          localStorage.setItem('Altitude', admin.token);
+          setSuccess(true);
+          router.push('/admin');
+        } else {
+          setErr(true);
+          setErrmsg('Something Error Occurred.');
         }
-
-      } else {
+      } else if (admin.error) {
         setErr(true);
-        setErrmsg('Invalid Credentials. Please Try Again.');
-        console.log("Invalid Credentials.");
+        setErrmsg(admin.error);
+      } else {
+        setErr(true),
+          setErrmsg('Internal Server Error.');
       }
-    } else {
-      console.log("Invalid Role Selection.");
+
+      setTimeout(() => {
+        setErr(false);
+        setSuccess(false);
+        setErrmsg('');
+        setSuccess('');
+      }, 2000);
     }
   };
 
@@ -125,6 +104,9 @@ export default function SignIn() {
 
   return (
     <>
+      <Head>
+        <title>SignIn | Altitude Tennis Academy</title>
+      </Head>
       {/* NavBar Secrtion */}
       {isLoading ? <Preloader /> : ''}
       <NavBar cls="header--secondary" />

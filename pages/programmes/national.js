@@ -1,10 +1,14 @@
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb"
 import SmallBanner from "@/components/common/SmallBanner"
 import Link from "next/link"
+import Head from "next/head"
 
 export default function National() {
     return (
         <>
+        <Head>
+            <title>National | Programmes</title>
+        </Head>
             <SmallBanner title="National">
                 <Breadcrumb
                     breadcrumbs={[

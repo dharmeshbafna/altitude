@@ -3,10 +3,14 @@ import SmallBanner from "@/components/common/SmallBanner"
 import about_thumb from "/public/images/gallery/center.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Itf1() {
     return (
         <>
+        <Head>
+            <title>ITF1 | Programmes</title>
+        </Head>
             <SmallBanner title="ITF-1">
                 <Breadcrumb
                     breadcrumbs={[

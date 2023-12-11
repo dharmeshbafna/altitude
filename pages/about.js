@@ -6,10 +6,14 @@ import JoinClub from "@/components/common/JoinClub";
 import Sponsor from "@/components/common/Sponsor";
 import Team from "@/components/common/Team";
 import Testimonial from "@/components/common/Testimonial";
+import Head from "next/head";
 
 export default function About() {
   return (
     <>
+    <Head>
+      <title>About | Altitude Tennis Academy</title>
+    </Head>
       {/* Banner section */}
       <Banner />
 

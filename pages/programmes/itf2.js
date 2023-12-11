@@ -1,10 +1,14 @@
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb"
 import SmallBanner from "@/components/common/SmallBanner"
 import Link from "next/link"
+import Head from "next/head"
 
 export default function Itf2() {
     return (
         <>
+        <Head>
+            <title>ITF2 | Programmes</title>
+        </Head>
             <SmallBanner title="ITF-2">
                 <Breadcrumb
                     breadcrumbs={[

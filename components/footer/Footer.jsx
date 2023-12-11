@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Social from "../social/Social";
-import logo_light from "/public/images/aisa_footer_logo.png";
+import logo_light from "/public/white_logo.png";
 
 const Footer = () => {
   return (
@@ -14,10 +14,8 @@ const Footer = () => {
                 <Image src={logo_light} alt="Logo" width={250} />
               </Link>
               <div className="footer__single-content">
-                <p>
-                Racket sport with players hitting a ball over a net, aiming to score points by landing the ball within the opponent&apos;s court.
-                </p>
                 {/* Socila */}
+                <div className="">
                 <Social
                   items={[
                     ["fa-facebook-f", "/"],
@@ -26,6 +24,7 @@ const Footer = () => {
                     ["fa-linkedin-in", "/"],
                   ]}
                 />
+                </div>
               </div>
             </div>
           </div>
@@ -61,10 +60,10 @@ const Footer = () => {
                   <p>+91 XXX-XXX-XXXX</p>
                 </div>
                 <div className="footer__single-content__group">
-                  <p>info@aisatennisacademy.com</p>
+                  <p>info@altitudetennisacademy.com</p>
                 </div>
                 <div className="footer__single-content__group">
-                  <p>AISA-2 Ahmedabad International Sports Acadamy In Lane of S.K.Farm,B/H, Kensville Golf Academy, Bodakdev, Rajpath Rangoli Rd, Ahmedabad, Gujarat 380054</p>
+                  <p>Altitude Ahmedabad International Sports Acadamy In Lane of S.K.Farm,B/H, Kensville Golf Academy, Bodakdev, Rajpath Rangoli Rd, Ahmedabad, Gujarat 380054</p>
                 </div>
               </div>
             </div>
@@ -99,7 +98,7 @@ const Footer = () => {
               <div className="row align-items-center">
                 <div className="col-lg-6">
                   <p>
-                    Copyright &copy; <span id="copyYear"></span> 2023 Aisa Tennis Academy.
+                    Copyright &copy; <span id="copyYear"></span> 2023 Altitude Tennis Academy.
                     All Rights Reserved{" "}
                   </p>
                 </div>

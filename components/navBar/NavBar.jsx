@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navData } from "./navData";
-import Logo_light from "/public/images/aisa_logo_size.png";
-import Logo from "/public/images/aisa_logo_size.png";
+import Logo_light from "/public/icon.png";
+import Logo from "/public/icon.png";
 import { FaUser } from 'react-icons/fa';
 import { useRouter } from "next/router";
 import jwt from 'jsonwebtoken';
@@ -16,26 +16,7 @@ const NavBar = ({ cls = "header--secondary" }) => {
   const [link, setLink] = useState('');
   const [tokencheck, setTokencheck] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-
-    const t = localStorage.getItem('token');
-    if (t) {
-      const saltremove = t.replace(process.env.TOKEN, '');
-      const decode = jwt.decode(saltremove);
-
-      if (decode.user) {
-        setLink('/student/user');
-        setTokencheck(true);
-      } else if (decode.coach) {
-        setTokencheck(true);
-        setLink('/coach/user');
-      } else if (decode.admin) {
-        setTokencheck(true);
-        setLink('/admin/user');
-      }
-    }
-  }, []);
+  const [isActive, setIsActive] = useState('');
 
   const handleActive = () => {
     setActive(false);
@@ -88,7 +69,7 @@ const NavBar = ({ cls = "header--secondary" }) => {
               <div className="nav__content">
                 <div className="nav__logo">
                   <Link href="/">
-                    <Image src={cls === "" ? Logo : Logo_light} alt="Logo" />
+                    <Image src={cls === "" ? Logo : Logo_light} alt="Logo" className="nav-logo-img" />
                   </Link>
                 </div>
                 <div className={`nav__menu ${active && "nav__menu-active"}`}>
