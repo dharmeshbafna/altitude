@@ -505,3 +505,24 @@ i {
 /* ==== 
  --------- (2.3) global styles end ---------
  ==== */
+/* Define the classes */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default: 1 column */
+}
+
+@media (min-width: 768px) {
+  .md-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns on large screens */
+  }
+}
+
+.gap-5 > * {
+  grid-gap: 1.25rem; /* Gap between grid items (equivalent to gap-5 in Tailwind) */
+}

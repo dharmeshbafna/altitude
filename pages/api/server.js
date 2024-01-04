@@ -20,3 +20,14 @@ export const adminlogin = async(email, pass) => {
     return({ error: 'Internal Server Error.' });
   }
 }
+
+//get all gallery data
+export const gallery = async() => {
+  try {
+    const getg = await axios.get(`${base_url}/gallery/getalldata`);
+
+    return getg.data;
+  } catch(err) {
+    return({ error: 'Internal Server Error.' });
+  }
+}

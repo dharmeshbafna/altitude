@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
-import club_view_thumb from "/public/images/tennis-player.png";
+import club_view_thumb from "/public/home2.jpg";
 
 const ClubView = () => {
   const [isOpen, setOpen] = useState(false);

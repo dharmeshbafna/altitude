@@ -3,6 +3,7 @@ import GalleryImags from "@/components/gallery/GalleryImags";
 import GalleryPopup from "@/components/gallery/GalleryPopup";
 import GallerySlider from "@/components/gallery/GallerySlider";
 import Head from "next/head";
+import Preloader from "@/components/preloader/Preloader";
 
 export default function Gallery() {
   return (
@@ -10,6 +11,9 @@ export default function Gallery() {
     <Head>
       <title>Gallery | Altitude Tennis Academy</title>
     </Head>
+
+    {/* Preloader */}
+    <Preloader />
       {/* Banner Secrtion */}
       <Banner />
 

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import five from "/public/images/gallery/fourth.jpg";
-import four from "/public/images/gallery/third.jpg";
-import one from "/public/images/gallery/first.jpg";
-import three from "/public/images/gallery/center.jpg";
-import two from "/public/images/gallery/second.jpg";
+import one from '/public/g2.jpg';
+import two from '/public/g3.jpg';
+import three from '/public/g1.jpg';
+import four from '/public/g4.jpg';
+import five from '/public/g5.jpg';
 
 const Gallery = () => {
   return (
@@ -23,7 +23,7 @@ const Gallery = () => {
                 to XX century. From a cricket club to soccer tournaments,
               </p>
               <div className="section__header-cta">
-                <Link href="/" className="cmn-button">
+                <Link href="/gallery" className="cmn-button">
                   See all Image
                 </Link>
               </div>

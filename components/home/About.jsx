@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import about_modal from "/public/images/experience_img_2.jpg";
-import about_two_thumb from "/public/images/experience_img.jpg";
+import about_two_thumb from "/public/home1.jpg";
 import { RiTeamFill } from 'react-icons/ri';
 import { FaTableTennis } from 'react-icons/fa';
 
