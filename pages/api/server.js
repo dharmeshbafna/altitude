@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const base_url = process.env.API_BASE_URL;
+// server url
+const base_url = 'https://server.altitudesports.in';
 
 //admin login
 export const adminlogin = async(email, pass) => {
