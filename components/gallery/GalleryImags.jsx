@@ -57,7 +57,21 @@ const GalleryImags = () => {
       }
     };
     fetchData();
-  }, []);
+
+    const handlekeypad = (e) => {
+
+      if (modal && e.key === "ArrowRight") {
+        handleNext();
+      } else if (modal && e.key === "ArrowLeft") {
+        handlePrev();
+      }
+    };
+
+    window.addEventListener("keydown", handlekeypad);
+    return () => {
+      window.removeEventListener('keydown', handlekeypad);
+    }
+  }, [modal]);
 
   return (
     <div className="section gallery wow fadeInUp" data-wow-duration="0.4s">
@@ -80,10 +94,10 @@ const GalleryImags = () => {
           <FaGreaterThan onClick={handleNext} className="p-2 fs-1 rounded-3" style={{ cursor: 'pointer', backgroundColor: '#0e7a31', color: 'white', position: 'absolute', top: '50%', right: '10px' }} />
           <FaLessThan onClick={handlePrev} className="p-2 fs-1 rounded-3" style={{ cursor: 'pointer', backgroundColor: '#0e7a31', color: 'white', position: 'absolute', top: '50%', left: '10px' }} />
           <Box sx={{
-              ...style,
-              transition: transitioning ? 'transform 0.3s ease-out' : 'none',
-              transform: `translate(-50%, -50%) ${transitioning ? 'scale(0.9)' : 'scale(1)'}`,
-            }}>
+            ...style,
+            transition: transitioning ? 'transform 0.3s ease-out' : 'none',
+            transform: `translate(-50%, -50%) ${transitioning ? 'scale(0.9)' : 'scale(1)'}`,
+          }}>
             <img src={`${path}/${data[imgIndex]}`} style={{ maxHeight: '90vh', width: 'auto' }} alt={`Image ${imgIndex}`} />
           </Box>
         </div>
