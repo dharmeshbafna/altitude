@@ -14,15 +14,15 @@ export const Loader = () => {
         <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
           <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto p-2" width={300} height={300} />
+              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
           </div>
           <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto p-2" width={300} height={300} />
+              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
           </div>
           <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto p-2" width={300} height={300} />
+              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
           </div>
         </div>
       </div>
@@ -112,7 +112,7 @@ const GalleryImags = () => {
           <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
             {data.map((image, index) => (
               <div key={index} onClick={() => handleImgClick(index)} className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
-                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} />
+                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} />
               </div>
             ))}
           </div>
