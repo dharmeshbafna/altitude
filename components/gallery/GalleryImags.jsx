@@ -4,6 +4,31 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
+
+export const Loader = () => {
+  return (
+    <div className="gallery wow fadeInUp" data-wow-duration="0.4s">
+      <div className="container">
+        <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
+          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+            {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
+              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto p-2" width={300} height={300} />
+          </div>
+          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+            {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
+              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto p-2" width={300} height={300} />
+          </div>
+          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+            {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
+              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto p-2" width={300} height={300} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+};
 
 const GalleryImags = () => {
 
@@ -26,6 +51,7 @@ const GalleryImags = () => {
   const [modal, setModal] = useState(false);
   const [imgIndex, setImgIndex] = useState(0);
   const path = 'https://server.altitudesports.in/storage';
+  const [isLoading, setIsloading] = useState(true);
 
   const handleImgClick = (index) => {
     setImgIndex(index);
@@ -53,6 +79,9 @@ const GalleryImags = () => {
     const fetchData = async () => {
       const result = await gallery();
       if (result.gallery) {
+        setTimeout(() => {
+          setIsloading(false);
+        }, 3000);
         setData(result.gallery.find((item) => item.title === 'first').images.map((image) => image.img));
       }
     };
@@ -75,15 +104,20 @@ const GalleryImags = () => {
 
   return (
     <div className="section gallery wow fadeInUp" data-wow-duration="0.4s">
-      <div className="container">
-        <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
-          {data.map((image, index) => (
-            <div key={index} onClick={() => handleImgClick(index)} className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
-              <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} />
-            </div>
-          ))}
+      {isLoading ?
+        <div>
+          <Loader />
+        </div> :
+        <div className="container">
+          <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
+            {data.map((image, index) => (
+              <div key={index} onClick={() => handleImgClick(index)} className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      }
       <Modal
         open={modal}
         onClose={() => setModal(false)}
