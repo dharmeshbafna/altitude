@@ -6,6 +6,7 @@ import Modal from '@mui/material/Modal';
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
+import { IoIosEye } from "react-icons/io";
 
 export const Loader = () => {
   return (
@@ -14,15 +15,15 @@ export const Loader = () => {
         <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
           <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
+            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
           </div>
           <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
+            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
           </div>
           <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-              <Skeleton animation="wave"  variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
+            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
           </div>
         </div>
       </div>
@@ -111,8 +112,16 @@ const GalleryImags = () => {
         <div className="container">
           <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
             {data.map((image, index) => (
-              <div key={index} onClick={() => handleImgClick(index)} className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
-                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} />
+              <div key={index} onClick={() => handleImgClick(index)} className="position-relative d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto rounded-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} />
+                <div className="overlay position-absolute d-flex justify-content-center align-items-center rounded-2">
+                  <div className="d-flex justify-content-center align-items-center text-white">
+                    <IoIosEye />
+                    <span className="text-white" style={{ paddingLeft: '5px' }}>
+                      View
+                    </span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
