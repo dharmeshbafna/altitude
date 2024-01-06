@@ -13,17 +13,17 @@ export const Loader = () => {
     <div className="gallery wow fadeInUp" data-wow-duration="0.4s">
       <div className="container">
         <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
-          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100 rounded-2">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
+            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={400} height={300} />
           </div>
-          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100 rounded-2">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
+            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={400} height={300} />
           </div>
-          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
+          <div className="d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100 rounded-2">
             {/* <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto p-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} /> */}
-            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={300} height={300} />
+            <Skeleton animation="wave" variant="rectangular" className="d-flex justify-content-center align-items-center mx-auto" width={400} height={300} />
           </div>
         </div>
       </div>
@@ -112,9 +112,9 @@ const GalleryImags = () => {
         <div className="container">
           <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
             {data.map((image, index) => (
-              <div key={index} onClick={() => handleImgClick(index)} className="position-relative d-flex justify-content-center align-items-center mx-auto gallery__thumb-single h-100">
-                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto rounded-2" style={{ height: '300px', width: 'auto' }} alt={`Image ${index}`} />
-                <div className="overlay position-absolute d-flex justify-content-center align-items-center rounded-2">
+              <div key={index} onClick={() => handleImgClick(index)} className="position-relative d-flex justify-content-center rounded-2 align-items-center mx-auto gallery__thumb-single">
+                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto" alt={`Image ${index}`} />
+                <div className="overlay position-absolute d-flex justify-content-center align-items-center">
                   <div className="d-flex justify-content-center align-items-center text-white">
                     <IoIosEye />
                     <span className="text-white" style={{ paddingLeft: '5px' }}>

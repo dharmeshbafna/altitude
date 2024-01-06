@@ -1458,18 +1458,21 @@
     position: relative;
     width: 100%;
     cursor: pointer;
-
+    border: 5px solid $primary-color;
+    height: 300px;
+    overflow: hidden;
+  
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       cursor: pointer;
-      border-radius: 5px;
       box-shadow: $shadow;
       transition: transform 0.3s ease;
-      border: 5px solid $primary-color;
   
       &:hover {
-        transform: scale(1.05);
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
       }
     }
   
@@ -1481,7 +1484,7 @@
       height: 100%;
       opacity: 0;
       transition: opacity 0.3s ease;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(14, 122, 48, 0.57); // Adjust the color and opacity as needed
   
       .text-white {
         opacity: 0;
@@ -1497,6 +1500,7 @@
       }
     }
   }
+  
   
 }
 
