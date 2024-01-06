@@ -33,10 +33,10 @@ const Gallery = () => {
         <div className="row section__row align-items-center">
           <div className="col-sm-6 col-lg-4 col-xl-4 section__col">
             <div className="gallery__thumb">
-              <div className="gallery__thumb-single">
+              <div className="gallery__thumb-single" style={{ padding: '10px' }}>
                 <Image src={one} alt="Image" />
               </div>
-              <div className="gallery__thumb-single">
+              <div className="gallery__thumb-single" style={{ padding: '10px' }}>
                 <Image src={two} alt="Image" />
               </div>
             </div>
@@ -50,10 +50,10 @@ const Gallery = () => {
           </div>
           <div className="col-sm-6 col-lg-4 col-xl-4 section__col">
             <div className="gallery__thumb">
-              <div className="gallery__thumb-single">
+              <div className="gallery__thumb-single" style={{ padding: '10px' }}>
                 <Image src={four} alt="Image" />
               </div>
-              <div className="gallery__thumb-single">
+              <div className="gallery__thumb-single" style={{ padding: '10px' }}>
                 <Image src={five} alt="Image" />
               </div>
             </div>
