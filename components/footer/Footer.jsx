@@ -10,12 +10,12 @@ const Footer = () => {
         <div className="row section__row">
           <div className="col-md-6 col-lg-4 col-xl-4 section__col">
             <div className="footer__single">
-              <Link href="/" className="footer__single-logo">
+              <Link href="/" className="footer__single-logo d-flex justify-content-center mx-auto d-lg-block">
                 <Image src={logo_light} alt="Logo" width={250} />
               </Link>
               <div className="footer__single-content">
                 {/* Socila */}
-                <div className="">
+                <div className="d-flex justify-content-center mx-auto d-lg-block">
                 <Social
                   items={[
                     ["fa-facebook-f", "/"],

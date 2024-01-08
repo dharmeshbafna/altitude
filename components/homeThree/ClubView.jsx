@@ -60,12 +60,12 @@ const ClubView = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-xl-5 offset-xl-1 section__col d-none d-lg-block">
+            <div className="col-lg-6 col-xl-5 offset-xl-1 section__col d-block">
               <div
                 className="join-club__thumb wow fadeInUp"
                 data-wow-duration="0.4s"
               >
-                <Image src={club_view_thumb} alt="Image" width={593} />
+                <Image src={club_view_thumb} alt="Image" width={593} className="d-flex justify-content-center mx-auto" />
                 {/* <div className="play-wrapper">
                   <button
                     // href="https://www.youtube.com/watch?v=RvreULjnzFo"

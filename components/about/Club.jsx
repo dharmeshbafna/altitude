@@ -7,7 +7,7 @@ const Club = () => {
     <section className="section club club--alt">
       <div className="container">
         <div className="row section__row">
-          <div className="col-lg-6 col-xl-5 section__col d-none d-lg-block">
+          <div className="col-lg-6 col-xl-5 section__col d-block">
             <div
               className="club__thumb dir-rtl wow fadeInUp"
               data-wow-duration="0.4s"

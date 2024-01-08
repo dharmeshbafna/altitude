@@ -1485,9 +1485,11 @@
     h5 {
       font-size: 22px;
       line-height: 32px;
+      text-align: center;
     }
 
     .footer__single-content {
+      text-align: center;
       margin-top: 15px;
 
       ul {
@@ -2133,6 +2135,7 @@
       .about--secondary__single-item {
         padding: 20px 16px;
         overflow: hidden;
+        border: none;
       }
     }
   }

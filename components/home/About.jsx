@@ -27,7 +27,7 @@ const About = () => {
       >
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-5 col-xxl-5 d-none d-lg-block">
+            <div className="col-lg-5 col-xxl-5 d-lg-block">
               <div className="about--secondary__thumb dir-rtl">
                 <Image src={about_two_thumb} alt="Image" className="" />
                 <div className="about--secondary__thumb-experience">
@@ -35,7 +35,7 @@ const About = () => {
                     10 + Years <br /> of experience
                   </p>
                 </div>
-                <div className="about--secondary__modal">
+                <div className="about--secondary__modal d-none d-md-block">
                   <Image src={about_modal} alt="img" />
                   {/* <div className="play-wrapper">
                     <button
