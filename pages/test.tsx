@@ -42,7 +42,7 @@ export default function Test() {
         <div className={styles.indextwo}>
           {/* <Header /> */}
           <div className={styles.indexthree}>
-            <div className={styles.indexfour}>
+            <div className={`${styles.indexfour}`}>
               <SlideInfo
                 transitionData={transitionData}
                 currentSlideData={currentSlideData}

@@ -58,6 +58,8 @@
     .indexfour {
         margin-bottom: 0;
         justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -154,6 +156,7 @@
 .otherinfomain {
     display: flex;
     flex-direction: column;
+    margin-left: 60px;
 }
 
 .sliderinfo {
