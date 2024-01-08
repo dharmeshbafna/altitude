@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // server url
-// const base_url = 'https://server.altitudesports.in';
-const base_url = 'http://localhost:5000';
+const base_url = 'https://server.altitudesports.in';
+// const base_url = 'http://localhost:5000';
 
 //admin login
 export const adminlogin = async(email, pass) => {
