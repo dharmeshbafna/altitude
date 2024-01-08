@@ -64,26 +64,26 @@ const About = () => {
                       <div className="row section__row">
                         <div className="col-6 col-sm-4 section__col">
                           <div className="about--secondary__single-item">
-                            <div className="about--secondary__single-item__icon">
+                            <div className="about--secondary__single-item__icon d-flex justify-content-center mx-auto">
                               <i className=""><RiTeamFill /></i>
                             </div>
-                            <h6>Professional Team</h6>
+                            <h6 className="text-center">Professional Team</h6>
                           </div>
                         </div>
                         <div className="col-6 col-sm-4 section__col">
                           <div className="about--secondary__single-item">
-                            <div className="about--secondary__single-item__icon">
+                            <div className="about--secondary__single-item__icon d-flex justify-content-center mx-auto ">
                               <i className=""><FaTableTennis /></i>
                             </div>
-                            <h6>Professional Trainings</h6>
+                            <h6 className="text-center">Professional Trainings</h6>
                           </div>
                         </div>
                         <div className="col-6 col-sm-4 section__col">
                           <div className="about--secondary__single-item">
-                            <div className="about--secondary__single-item__icon">
+                            <div className="about--secondary__single-item__icon d-flex justify-content-center mx-auto">
                               <i className="golftio-gym"></i>
                             </div>
-                            <h6>Facilities with Gym</h6>
+                            <h6 className="text-center">Facilities with Gym</h6>
                           </div>
                         </div>
                       </div>
