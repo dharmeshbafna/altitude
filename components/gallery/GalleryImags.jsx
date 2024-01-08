@@ -7,6 +7,7 @@ import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 import { IoIosEye } from "react-icons/io";
+import Image from "next/image";
 
 export const Loader = () => {
   return (
@@ -113,7 +114,7 @@ const GalleryImags = () => {
           <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
             {data.map((image, index) => (
               <div key={index} onClick={() => handleImgClick(index)} className="position-relative d-flex justify-content-center rounded-2 align-items-center mx-auto gallery__thumb-single">
-                <img src={`${path}/${image}`} className="d-flex justify-content-center align-items-center mx-auto" alt={`Image ${index}`} />
+                <Image src={`${path}/${image}`} width={110} height={110} className="d-flex justify-content-center align-items-center mx-auto" alt={`Image ${index}`} />
                 <div className="overlay position-absolute d-flex justify-content-center align-items-center">
                   <div className="d-flex justify-content-center align-items-center text-white">
                     <IoIosEye />
