@@ -29,7 +29,7 @@ const About = () => {
           <div className="row align-items-center">
             <div className="col-lg-5 col-xxl-5 d-lg-block">
               <div className="about--secondary__thumb dir-rtl">
-                <Image src={about_two_thumb} alt="Image" className="" />
+                <Image src={about_two_thumb} alt="Image" className="rounded-2" />
                 <div className="about--secondary__thumb-experience">
                   <p>
                     10 + Years <br /> of experience

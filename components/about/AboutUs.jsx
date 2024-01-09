@@ -71,7 +71,7 @@ const AboutUs = () => {
           </div>
           <div className="col-lg-6 col-xl-5 offset-xl-1 section__col">
             <div className="about__thumb wow fadeInUp" data-wow-duration="0.4s">
-              <Image src={about_thumb} alt="Image" className="" />
+              <Image src={about_thumb} alt="Image" className="rounded-2" />
               {/* <div className="about__experience">
                 <div className="about__experience-thumb">
                   <i className="golftio-ball"></i>

@@ -12,7 +12,7 @@ const Club = () => {
               className="club__thumb dir-rtl wow fadeInUp"
               data-wow-duration="0.4s"
             >
-              <Image src={club_thumb} alt="Image" className="" />
+              <Image src={club_thumb} alt="Image" className="rounded-2" style={{ maxHeight: '600px', width: 'auto' }} />
               <div className="club__thumb-experience">
                 <h3>
                   {/* <span className="odometer" data-odometer-final="30"></span> */}

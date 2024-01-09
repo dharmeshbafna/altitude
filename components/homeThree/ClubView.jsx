@@ -65,7 +65,7 @@ const ClubView = () => {
                 className="join-club__thumb wow fadeInUp"
                 data-wow-duration="0.4s"
               >
-                <Image src={club_view_thumb} alt="Image" width={593} className="d-flex justify-content-center mx-auto" />
+                <Image src={club_view_thumb} alt="Image" width={593} className="d-flex justify-content-center mx-auto rounded-2" />
                 {/* <div className="play-wrapper">
                   <button
                     // href="https://www.youtube.com/watch?v=RvreULjnzFo"
