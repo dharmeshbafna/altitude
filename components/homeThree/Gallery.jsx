@@ -34,27 +34,27 @@ const Gallery = () => {
           <div className="col-sm-6 col-lg-4 col-xl-4 section__col">
             <div className="gallery__thumb">
               <div className="gallery__thumb-single rounded-2" style={{ marginTop: '14px', marginBottom: '14px' }}>
-                <Image src={one} alt="Image" />
+                <Image src={one} width={200} height={200} alt="Image" />
               </div>
               <div className="gallery__thumb-single rounded-2" style={{ marginTop: '14px', marginBottom: '14px' }}>
-                <Image src={two} alt="Image" />
+                <Image src={two} width={200} height={200} alt="Image" />
               </div>
             </div>
           </div>
           <div className="col-lg-4 col-xl-4 section__col d-none d-lg-block">
             <div className="gallery__thumb">
               <div className="gallery__thumb-single rounded-2">
-                <Image src={three} alt="Image" />
+                <Image src={three} width={200} height={200} alt="Image" />
               </div>
             </div>
           </div>
           <div className="col-sm-6 col-lg-4 col-xl-4 section__col">
             <div className="gallery__thumb">
               <div className="gallery__thumb-single rounded-2" style={{ marginTop: '14px', marginBottom: '14px' }}>
-                <Image src={four} alt="Image" />
+                <Image src={four} width={200} height={200} alt="Image" />
               </div>
               <div className="gallery__thumb-single rounded-2" style={{ marginTop: '14px', marginBottom: '14px' }}>
-                <Image src={five} alt="Image" />
+                <Image src={five} width={200} height={200} alt="Image" />
               </div>
             </div>
           </div>
