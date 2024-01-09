@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navData } from "./navData";
-import Logo_light from "/public/logo1.png";
-import Logo from "/public/logo1.png";
+import Logo_light from "/public/altitude-logo1.png";
+import Logo from "/public/altitude-logo1.png";
+import Logo2_light from "/public/altitude-logo.png";
+import Logo2 from "/public/altitude-logo.png";
 import { FaUser } from 'react-icons/fa';
 import { useRouter } from "next/router";
 import jwt from 'jsonwebtoken';
@@ -75,7 +77,7 @@ const NavBar = ({ cls = "header--secondary" }) => {
                 <div className={`nav__menu ${active && "nav__menu-active"}`}>
                   <div className="nav__menu-logo d-flex d-xl-none">
                     <Link href="/" className="text-center hide-nav">
-                      <Image src={cls === "" ? Logo : Logo_light} alt="Logo" />
+                      <Image src={cls === "" ? Logo2 : Logo2_light} alt="Logo" />
                     </Link>
                     <button
                       className="nav__menu-close bg-transparent"

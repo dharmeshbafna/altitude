@@ -383,7 +383,9 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: 30px;
       gap: 20px;
 
@@ -394,6 +396,9 @@
       .nav__menu-close {
         font-size: 30px;
         color: $theme-color;
+        position: absolute;
+        top: 10px;
+        right: 15px;
       }
     }
 
@@ -1652,8 +1657,10 @@
 
     .nav__logo {
       img {
-        max-width: 130px;
-        height: 36px;
+        // max-width: 130px;
+        // height: 36px;
+        width: 100%;
+        height: auto;
       }
     }
   }
