@@ -70,35 +70,35 @@ export default function Test() {
 
 const sliderData = [
   {
-    img: "/tennis-banner-2.jpg",
+    img: "/tennis-banner-2.webp",
     location: "Ace Attack",
     description:
       "Embark on a transformative journey towards becoming a skilled and well-rounded tennis player under expert guidance.",
     title: "Ace Attack",
   },
   {
-    img: "/tennis-banner-3.jpg",
+    img: "/tennis-banner-3.webp",
     title: "Tennis Thrills",
     description:
       "Train with top-notch coaches and elevate your game to new heights at our prestigious tennis academy.",
     location: "Arizona",
   },
   {
-    img: "/tennis-banner.jpg",
+    img: "/tennis-banner.webp",
     title: "Master Class",
     description:
       "Nurture your talent and passion for tennis in a supportive and professional environment at our renowned academy.",
     location: "Kenya",
   },
   {
-    img: "/tennis-banner-4.jpg",
+    img: "/tennis-banner-4.webp",
     title: "Court Champion",
     description:
       "Embark on a transformative journey towards becoming a skilled and well-rounded tennis player under expert guidance.",
     location: "Cambodia",
   },
   {
-    img: "/tennis-banner-5.jpg",
+    img: "/tennis-banner-5.webp",
     title: "Dynamic Shots",
     description:
       "Immerse yourself in a world-class tennis program that focuses on technique, strategy, and physical conditioning for aspiring athletes.",
