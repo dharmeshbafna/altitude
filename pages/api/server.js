@@ -33,3 +33,14 @@ export const gallery = async() => {
     return({ error: 'Internal Server Error.' });
   }
 }
+
+// get all cloudinary data
+export const cfetch = async () => {
+  const res = await axios.get(`${base_url}/gallery/cfetch`);
+
+    if(res.data) {
+      return res.data;
+    } else {
+      return({ error: 'Internal Server Error.' });
+    }
+}

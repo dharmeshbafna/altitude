@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { gallery } from "../../pages/api/server";
+import { gallery, cfetch } from "../../pages/api/server";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
@@ -8,6 +8,8 @@ import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 import { IoIosEye } from "react-icons/io";
 import Image from "next/image";
+import { Cloudinary } from "@cloudinary/url-gen";
+import axios from "axios";
 
 export const Loader = () => {
   return (
@@ -79,12 +81,12 @@ const GalleryImags = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await gallery();
-      if (result.gallery) {
+      const result = await cfetch();
+      if (result.success) {
         setTimeout(() => {
           setIsloading(false);
         }, 3000);
-        setData(result.gallery.find((item) => item.title === 'first').images.map((image) => image.img));
+        setData(result.success);
       }
     };
     fetchData();
@@ -103,7 +105,6 @@ const GalleryImags = () => {
       window.removeEventListener('keydown', handlekeypad);
     }
   }, [modal]);
-
   return (
     <div className="section gallery wow fadeInUp" data-wow-duration="0.4s">
       {isLoading ?
@@ -114,7 +115,7 @@ const GalleryImags = () => {
           <div className="grid md-grid-cols-2 lg-grid-cols-3 gap-5">
             {data.map((image, index) => (
               <div key={index} onClick={() => handleImgClick(index)} className="position-relative d-flex justify-content-center rounded-2 align-items-center mx-auto gallery__thumb-single">
-                <Image src={`${path}/${image}`} width={100} height={100} className="d-flex justify-content-center align-items-center mx-auto" alt={`Image ${index}`} />
+                <Image src={`${image}`} width={150} height={150} className="d-flex justify-content-center align-items-center mx-auto" alt={`Image ${index}`} />
                 <div className="overlay position-absolute d-flex justify-content-center align-items-center">
                   <div className="d-flex justify-content-center align-items-center text-white">
                     <IoIosEye />
@@ -142,7 +143,7 @@ const GalleryImags = () => {
             transition: transitioning ? 'transform 0.3s ease-out' : 'none',
             transform: `translate(-50%, -50%) ${transitioning ? 'scale(0.9)' : 'scale(1)'}`,
           }}>
-            <Image width={490} height={490} src={`${path}/${data[imgIndex]}`} style={{ maxHeight: '90vh', width: 'auto' }} alt={`Image ${imgIndex}`} />
+            <Image width={490} height={490} src={`${data[imgIndex]}`} style={{ maxHeight: '90vh', width: 'auto' }} alt={`Image ${imgIndex}`} />
           </Box>
         </div>
       </Modal>
